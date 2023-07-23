@@ -3,7 +3,7 @@ spring:
     activate:
       on-profile: local
   datasource:
-    url: "jdbc:h2:mem:library;MODE=MYSQL;NON_KEYWORDS=USER"
+    url: "jdbc:h2:mem:rental;MODE=MYSQL;NON_KEYWORDS=USER"
     username: "sa"
     password: ""
     driver-class-name: org.h2.Driver
@@ -30,7 +30,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: "jdbc:mysql://localhost/library"
+    url: "jdbc:mysql://localhost/rental"
     username: "root"
     password: ""
     driver-class-name: com.mysql.cj.jdbc.Driver
