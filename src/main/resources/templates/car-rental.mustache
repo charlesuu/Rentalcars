@@ -3,25 +3,25 @@
 <h1>차량 렌트 및 반납</h1>
 
 <div class="col-md-12">
-    <div class="col-md-4">
-        <form>
-            <div class="form-group">
-                <label for="id">유저 번호</label>
-                <input type="text" class="form-control" id="id" value="{{user.id}}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="name">이름</label>
-                <input type="text" class="form-control" id="name" value="{{user.name}}" readonly>
-            </div>
-            <div class="form-group">
-                <label for="car-name"> 차량명 </label>
-                <input type="text" class="form-control" id="car-name" placeholder="렌트 또는 반납할 차량명(띄어쓰기 없이 입력할 것)">
-            </div>
-        </form>
-        <a href="/" role="button" class="btn btn-secondary">취소</a>
-        <button type="button" class="btn btn-primary" id="btn-car-lental">렌트하기</button>
-        <button type="button" class="btn btn-danger" id="btn-car-return">반납하기</button>
-    </div>
+  <div class="col-md-4">
+    <form>
+      <div class="form-group">
+        <label for="id">유저 번호</label>
+        <input type="text" class="form-control" id="id" value="{{user.id}}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" class="form-control" id="name" value="{{user.name}}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="car-name"> 차량명 </label>
+        <input type="text" class="form-control" id="car-name" placeholder="렌트 또는 반납할 차량명(띄어쓰기 없이 입력할 것)">
+      </div>
+    </form>
+    <a href="/" role="button" class="btn btn-secondary">취소</a>
+    <button type="button" class="btn btn-primary" id="btn-car-rental">렌트하기</button>
+    <button type="button" class="btn btn-danger" id="btn-car-return">반납하기</button>
+  </div>
 </div>
 
 {{>layout/footer}}
