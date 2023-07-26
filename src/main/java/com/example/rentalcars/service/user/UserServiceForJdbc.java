@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceV1 implements UserService {
+public class UserServiceForJdbc implements UserService {
 
     UserJdbcRepository userJdbcRepository;
 

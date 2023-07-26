@@ -13,11 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Primary
-public class UserServiceV2 implements UserService {
+public class UserServiceForJpa implements UserService {
 
     private final UserRepository userRepository;
 
-    public UserServiceV2(UserRepository userRepository) {
+    public UserServiceForJpa(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

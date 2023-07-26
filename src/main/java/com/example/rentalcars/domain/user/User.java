@@ -1,6 +1,6 @@
 package com.example.rentalcars.domain.user;
 
-import com.example.rentalcars.domain.user.loanhistory.UserLoanHistory;
+import com.example.rentalcars.domain.user.loanhistory.UserRentalHistory;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,7 +24,7 @@ public class User {
     private Integer age;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
+    private List<UserRentalHistory> userLoanHistories = new ArrayList<>();
 
     protected User() {
     }
@@ -55,12 +55,12 @@ public class User {
 
 
     public void rentCar(String carName) {
-        this.userLoanHistories.add(new UserLoanHistory(this, carName));
+        this.userLoanHistories.add(new UserRentalHistory(this, carName));
     }
 
     public void returnCar(String carName) {
         //이름으로 렌트 기록 찾기
-        UserLoanHistory targetHistory = this.userLoanHistories.stream()
+        UserRentalHistory targetHistory = this.userLoanHistories.stream()
                 .filter(history -> history.getCarName().equals(carName))
                 .filter(history -> !history.isReturn())
                 .findFirst()//Optional로 반환해주는 함수

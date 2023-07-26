@@ -4,7 +4,7 @@ import com.example.rentalcars.domain.car.Car;
 import com.example.rentalcars.domain.car.CarRepository;
 import com.example.rentalcars.domain.user.User;
 import com.example.rentalcars.domain.user.UserRepository;
-import com.example.rentalcars.domain.user.loanhistory.UserLoanHistoryRepository;
+import com.example.rentalcars.domain.user.loanhistory.UserRentalHistoryRepository;
 import com.example.rentalcars.dto.car.request.CarCreateRequest;
 import com.example.rentalcars.dto.car.request.CarRentalRequest;
 import com.example.rentalcars.dto.car.request.CarReturnRequest;
@@ -18,7 +18,7 @@ public class CarService {
 
     private final CarRepository carRepository;
     private final UserRepository userRepository;
-    private final UserLoanHistoryRepository userLoanHistoryRepository;
+    private final UserRentalHistoryRepository userRentalHistoryRepository;
 
     @Transactional
     public void saveCar(CarCreateRequest request) {
@@ -32,7 +32,7 @@ public class CarService {
                 .orElseThrow(IllegalArgumentException::new);
 
         //2. 렌트 이력이 있는 책인지 확인. 만약 (렌트 이력이 있고 && 반납되지 않은 차)라면 예외를 던진다.
-        if (userLoanHistoryRepository.existsByCarNameAndIsReturn(car.getName(), false)) {
+        if (userRentalHistoryRepository.existsByCarNameAndIsReturn(car.getName(), false)) {
             throw new IllegalArgumentException("이미 렌트된 차입니다.");
         }
 

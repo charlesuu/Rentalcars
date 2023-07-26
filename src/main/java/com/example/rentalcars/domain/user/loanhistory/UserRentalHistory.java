@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class UserLoanHistory {
+public class UserRentalHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,10 @@ public class UserLoanHistory {
 
     private boolean isReturn;
 
-    protected UserLoanHistory() {
+    protected UserRentalHistory() {
     }
 
-    public UserLoanHistory(User user, String carName) {
+    public UserRentalHistory(User user, String carName) {
         this.user = user;
         this.carName = carName;
         this.isReturn = false;

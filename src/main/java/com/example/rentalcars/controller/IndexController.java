@@ -4,21 +4,18 @@ import com.example.rentalcars.domain.user.User;
 import com.example.rentalcars.domain.user.UserRepository;
 import com.example.rentalcars.dto.user.response.UserResponse;
 import com.example.rentalcars.service.user.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@RequiredArgsConstructor
 public class IndexController {
 
-    UserService userService;
-    UserRepository userRepository;
-
-    public IndexController(UserService userService, UserRepository userRepository) {
-        this.userService = userService;
-        this.userRepository = userRepository;
-    }
+    private final UserService userService;
+    private final UserRepository userRepository;
 
     @GetMapping("/")
     public String index(Model model) {
