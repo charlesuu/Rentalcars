@@ -6,7 +6,10 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 *.idea
-*.yml
+deploy
+.env
+src/main/resources/application*.yml
+src/test/resources/application.yml
 *.properties
 
 # User-specific stuff
