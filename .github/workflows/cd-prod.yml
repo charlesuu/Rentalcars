@@ -46,7 +46,7 @@ jobs:
           host: ${{ secrets.EC2_INSTANCE_HOST }}
           username: ${{ secrets.EC2_INSTANCE_USERNAME }}
           key: ${{ secrets.EC2_INSTANCE_PRIVATE_KEY }}
-          source: './deploy/dev/*'
+          source: './deploy/prod/*'
           target: '~/pickple/deploy'
           strip_components: 2
 
