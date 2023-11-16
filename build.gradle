@@ -42,6 +42,6 @@ task copySubmodule(type: Copy) {
     copy {
         from './secret'
         include "docker-compose.yml"
-        into 'deploy/dev'
+        into 'deploy/prod'
     }
 }
