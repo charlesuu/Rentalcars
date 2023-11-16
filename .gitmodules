@@ -1,4 +1,4 @@
 [submodule "secret"]
 	path = secret
 	url = git@github.com:charlesuu/Rentalcars-env.git
-	branch = main
+	branch = master
